@@ -1,0 +1,340 @@
+---
+# Theming Showcase Page
+# Demonstrates different themes and custom styling options
+
+pageInfo:
+  title: Theming Showcase
+  description: Examples of themes, colors, and custom styling
+  logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+  footerText: "Switch themes using the settings menu to see different color schemes"
+
+sections:
+  # Custom Colors Section
+  - name: Custom Item Colors
+    icon: fas fa-palette
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#ff6b6b'
+    items:
+      - title: Red Item
+        description: Custom red text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#ff6b6b'
+        target: newtab
+        keywords: red color custom
+      - title: Blue Item
+        description: Custom blue text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#3498db'
+        target: newtab
+        keywords: blue color custom
+      - title: Green Item
+        description: Custom green text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#2ecc71'
+        target: newtab
+        keywords: green color custom
+      - title: Purple Item
+        description: Custom purple text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#9b59b6'
+        target: newtab
+        keywords: purple color custom
+      - title: Orange Item
+        description: Custom orange text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#f39c12'
+        target: newtab
+        keywords: orange color custom
+      - title: Yellow Item
+        description: Custom yellow text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#f1c40f'
+        target: newtab
+        keywords: yellow color custom
+      - title: Pink Item
+        description: Custom pink text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#e91e63'
+        target: newtab
+        keywords: pink color custom
+      - title: Teal Item
+        description: Custom teal text color
+        icon: fas fa-circle
+        url: https://dashy.to
+        color: '#1abc9c'
+        target: newtab
+        keywords: teal color custom
+
+  # Background Colors
+  - name: Custom Backgrounds
+    icon: fas fa-fill-drip
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#4ecdc4'
+    items:
+      - title: Red Background
+        description: Red background with white text
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#ff6b6b'
+        color: '#ffffff'
+        target: newtab
+        keywords: background red
+      - title: Blue Background
+        description: Blue background with white text
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#3498db'
+        color: '#ffffff'
+        target: newtab
+        keywords: background blue
+      - title: Green Background
+        description: Green background with white text
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#2ecc71'
+        color: '#ffffff'
+        target: newtab
+        keywords: background green
+      - title: Purple Background
+        description: Purple background with white text
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#9b59b6'
+        color: '#ffffff'
+        target: newtab
+        keywords: background purple
+      - title: Gradient Style
+        description: Custom colored item
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#667eea'
+        color: '#ffffff'
+        target: newtab
+        keywords: background gradient
+      - title: Dark Background
+        description: Dark theme item
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#2c3e50'
+        color: '#ecf0f1'
+        target: newtab
+        keywords: background dark
+      - title: Light Background
+        description: Light theme item
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#ecf0f1'
+        color: '#2c3e50'
+        target: newtab
+        keywords: background light
+      - title: Orange Background
+        description: Orange background item
+        icon: fas fa-square
+        url: https://dashy.to
+        backgroundColor: '#f39c12'
+        color: '#ffffff'
+        target: newtab
+        keywords: background orange
+
+  # Section Colors
+  - name: Section Color Examples
+    icon: fas fa-layer-group
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#e74c3c'
+    items:
+      - title: Red Section
+        description: Section with red accent
+        icon: fas fa-heart
+        url: https://dashy.to
+        target: newtab
+        keywords: section red
+      - title: Item in Red Section
+        description: Multiple items in colored section
+        icon: fas fa-star
+        url: https://dashy.to
+        target: newtab
+        keywords: section items
+
+  - name: Blue Section Color
+    icon: fas fa-tint
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#3498db'
+    items:
+      - title: Blue Section
+        description: Section with blue accent color
+        icon: fas fa-water
+        url: https://dashy.to
+        target: newtab
+        keywords: section blue
+      - title: Another Item
+        description: More items in blue section
+        icon: fas fa-droplet
+        url: https://dashy.to
+        target: newtab
+        keywords: section items
+
+  - name: Green Section Color
+    icon: fas fa-leaf
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#2ecc71'
+    items:
+      - title: Green Section
+        description: Section with green accent color
+        icon: fas fa-tree
+        url: https://dashy.to
+        target: newtab
+        keywords: section green
+      - title: Nature Items
+        description: Items in green section
+        icon: fas fa-seedling
+        url: https://dashy.to
+        target: newtab
+        keywords: section items
+
+  # Icon Sizes
+  - name: Icon Sizes
+    icon: fas fa-expand
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#9b59b6'
+      itemSize: small
+    items:
+      - title: Small Icons
+        description: Small icon size setting
+        icon: fas fa-circle
+        url: https://dashy.to
+        target: newtab
+        keywords: icon size small
+
+  - name: Medium Icon Size
+    icon: fas fa-expand-arrows-alt
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#9b59b6'
+      itemSize: medium
+    items:
+      - title: Medium Icons
+        description: Medium icon size (default)
+        icon: fas fa-circle
+        url: https://dashy.to
+        target: newtab
+        keywords: icon size medium
+
+  - name: Large Icon Size
+    icon: fas fa-expand-arrows-alt
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#9b59b6'
+      itemSize: large
+    items:
+      - title: Large Icons
+        description: Large icon size setting
+        icon: fas fa-circle
+        url: https://dashy.to
+        target: newtab
+        keywords: icon size large
+
+  # Layout Examples
+  - name: Grid Layout (2 cols)
+    icon: fas fa-th
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#f39c12'
+      sectionLayout: grid
+      itemCountX: 2
+    items:
+      - title: Item 1
+        description: Grid layout example
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: grid layout
+      - title: Item 2
+        description: 2 column grid
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: grid 2cols
+      - title: Item 3
+        description: More items
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: grid items
+      - title: Item 4
+        description: Final item
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: grid final
+
+  - name: Auto Layout (Default)
+    icon: fas fa-th-large
+    displayData:
+      rows: 2
+      cols: 3
+      color: '#1abc9c'
+      sectionLayout: auto
+    items:
+      - title: Auto Layout
+        description: Flexible auto layout
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: auto layout
+      - title: Flexible
+        description: Adapts to screen size
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: flexible responsive
+      - title: Responsive
+        description: Works on all devices
+        icon: fas fa-square
+        url: https://dashy.to
+        target: newtab
+        keywords: responsive mobile
+
+  # Collapsed Section
+  - name: Collapsed Section (Click to Expand)
+    icon: fas fa-chevron-down
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#e67e22'
+      collapsed: true
+    items:
+      - title: Hidden Item 1
+        description: This section is collapsed by default
+        icon: fas fa-eye-slash
+        url: https://dashy.to
+        target: newtab
+        keywords: collapsed hidden
+      - title: Hidden Item 2
+        description: Click section header to expand
+        icon: fas fa-eye-slash
+        url: https://dashy.to
+        target: newtab
+        keywords: expand click
+

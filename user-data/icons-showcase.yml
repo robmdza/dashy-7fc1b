@@ -1,0 +1,446 @@
+---
+# Icons Showcase Page
+# Demonstrates all supported icon types and formats
+
+pageInfo:
+  title: Icons Showcase
+  description: All supported icon types and formats in Dashy
+  logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+
+sections:
+  # Font Awesome Icons
+  - name: Font Awesome Icons
+    icon: fab fa-font-awesome
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#339af0'
+    items:
+      - title: Solid Icon
+        description: Font Awesome Solid (fas)
+        icon: fas fa-rocket
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome solid
+      - title: Regular Icon
+        description: Font Awesome Regular (far)
+        icon: far fa-star
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome regular
+      - title: Brand Icon
+        description: Font Awesome Brands (fab)
+        icon: fab fa-github
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome brands
+      - title: Light Icon
+        description: Font Awesome Light (fal)
+        icon: fal fa-moon
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome light
+      - title: Duotone Icon
+        description: Font Awesome Duotone (fad)
+        icon: fad fa-gem
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome duotone
+      - title: Thin Icon
+        description: Font Awesome Thin (fat)
+        icon: fat fa-sun
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome thin
+      - title: Sharp Solid
+        description: Font Awesome Sharp Solid (fass)
+        icon: fass fa-house
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome sharp
+      - title: Icon with Style
+        description: Custom styled FA icon
+        icon: fas fa-heart
+        color: '#ff6b6b'
+        url: https://fontawesome.com
+        target: newtab
+        keywords: styled icon
+
+  # Simple Icons
+  - name: Simple Icons
+    icon: si-simpleicons
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#20c997'
+    items:
+      - title: GitHub
+        description: Simple Icon for GitHub
+        icon: si-github
+        url: https://github.com
+        target: newtab
+        keywords: simple icon github
+      - title: Docker
+        description: Simple Icon for Docker
+        icon: si-docker
+        url: https://docker.com
+        target: newtab
+        keywords: simple icon docker
+      - title: Kubernetes
+        description: Simple Icon for Kubernetes
+        icon: si-kubernetes
+        url: https://kubernetes.io
+        target: newtab
+        keywords: simple icon kubernetes
+      - title: JavaScript
+        description: Simple Icon for JavaScript
+        icon: si-javascript
+        url: https://javascript.com
+        target: newtab
+        keywords: simple icon javascript
+      - title: Python
+        description: Simple Icon for Python
+        icon: si-python
+        url: https://python.org
+        target: newtab
+        keywords: simple icon python
+      - title: Node.js
+        description: Simple Icon for Node.js
+        icon: si-nodedotjs
+        url: https://nodejs.org
+        target: newtab
+        keywords: simple icon nodejs
+      - title: React
+        description: Simple Icon for React
+        icon: si-react
+        url: https://react.dev
+        target: newtab
+        keywords: simple icon react
+      - title: Vue.js
+        description: Simple Icon for Vue.js
+        icon: si-vuedotjs
+        url: https://vuejs.org
+        target: newtab
+        keywords: simple icon vue
+
+  # Material Design Icons
+  - name: Material Design Icons
+    icon: mdi-material-design
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#fd7e14'
+    items:
+      - title: Alien Icon
+        description: Material Design alien
+        icon: mdi-alien
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon alien
+      - title: Fire Icon
+        description: Material Design fire
+        icon: mdi-fire
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon fire
+      - title: Rocket Icon
+        description: Material Design rocket
+        icon: mdi-rocket-launch
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon rocket
+      - title: Heart Icon
+        description: Material Design heart
+        icon: mdi-heart
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon heart
+      - title: Star Icon
+        description: Material Design star
+        icon: mdi-star
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon star
+      - title: Shield Icon
+        description: Material Design shield
+        icon: mdi-shield-check
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon shield
+      - title: Lightning
+        description: Material Design lightning
+        icon: mdi-lightning-bolt
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon lightning
+      - title: Google Dino
+        description: Material Design dinosaur
+        icon: mdi-google-downasaur
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material icon dino
+
+  # Home Lab Icons
+  - name: Home Lab Icons
+    icon: hl-docker
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#0d8bd9'
+    items:
+      - title: Docker
+        description: Home Lab Docker icon
+        icon: hl-docker
+        url: https://docker.com
+        target: newtab
+        keywords: homelab docker
+      - title: Portainer
+        description: Home Lab Portainer icon
+        icon: hl-portainer
+        url: https://portainer.io
+        target: newtab
+        keywords: homelab portainer
+      - title: Home Assistant
+        description: Home Lab Home Assistant icon
+        icon: hl-homeassistant
+        url: https://home-assistant.io
+        target: newtab
+        keywords: homelab homeassistant
+      - title: Jellyfin
+        description: Home Lab Jellyfin icon
+        icon: hl-jellyfin
+        url: https://jellyfin.org
+        target: newtab
+        keywords: homelab jellyfin
+      - title: Plex
+        description: Home Lab Plex icon
+        icon: hl-plex
+        url: https://plex.tv
+        target: newtab
+        keywords: homelab plex
+      - title: Proxmox
+        description: Home Lab Proxmox icon
+        icon: hl-proxmox
+        url: https://proxmox.com
+        target: newtab
+        keywords: homelab proxmox
+      - title: Nextcloud
+        description: Home Lab Nextcloud icon
+        icon: hl-nextcloud
+        url: https://nextcloud.com
+        target: newtab
+        keywords: homelab nextcloud
+      - title: Pi-hole
+        description: Home Lab Pi-hole icon
+        icon: hl-pihole
+        url: https://pi-hole.net
+        target: newtab
+        keywords: homelab pihole
+
+  # Selfh.st Icons
+  - name: Selfh.st Icons
+    icon: sh-selfhosted
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#6c757d'
+    items:
+      - title: Home Assistant
+        description: Selfh.st Home Assistant
+        icon: sh-home-assistant
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst home assistant
+      - title: Nextcloud
+        description: Selfh.st Nextcloud
+        icon: sh-nextcloud
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst nextcloud
+      - title: AdGuard
+        description: Selfh.st AdGuard
+        icon: sh-adguard
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst adguard
+      - title: Jellyfin
+        description: Selfh.st Jellyfin
+        icon: sh-jellyfin
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst jellyfin
+      - title: Portainer
+        description: Selfh.st Portainer
+        icon: sh-portainer
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst portainer
+      - title: Proxmox
+        description: Selfh.st Proxmox
+        icon: sh-proxmox
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst proxmox
+      - title: Vaultwarden
+        description: Selfh.st Vaultwarden
+        icon: sh-vaultwarden
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst vaultwarden
+      - title: Grafana
+        description: Selfh.st Grafana
+        icon: sh-grafana
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst grafana
+
+  # Emoji Icons
+  - name: Emoji Icons
+    icon: 😀
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#ffd700'
+    items:
+      - title: Rocket Emoji
+        description: Direct emoji character
+        icon: 🚀
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji rocket
+      - title: Star Emoji
+        description: Emoji unicode
+        icon: 'U+1F31F'
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji star unicode
+      - title: Heart Emoji
+        description: Emoji shortcode
+        icon: ':heart:'
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji heart shortcode
+      - title: Fire Emoji
+        description: Fire emoji 🔥
+        icon: 🔥
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji fire
+      - title: Computer Emoji
+        description: Computer 💻
+        icon: 💻
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji computer
+      - title: Lightning Emoji
+        description: Lightning ⚡
+        icon: ⚡
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji lightning
+      - title: Globe Emoji
+        description: Globe 🌍
+        icon: 🌍
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji globe
+      - title: Moon Emoji
+        description: Moon 🌙
+        icon: 🌙
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji moon
+
+  # Favicon & Generative Icons
+  - name: Favicon & Generative
+    icon: fas fa-magic
+    displayData:
+      rows: 2
+      cols: 4
+      color: '#9b59b6'
+    items:
+      - title: Favicon Auto
+        description: Auto-fetched favicon
+        icon: favicon
+        url: https://www.google.com
+        target: newtab
+        keywords: favicon auto
+      - title: Favicon Local
+        description: Favicon with local API
+        icon: favicon-local
+        url: https://www.github.com
+        target: newtab
+        keywords: favicon local
+      - title: Favicon Clearbit
+        description: Favicon with Clearbit API
+        icon: favicon-clearbit
+        url: https://www.apple.com
+        target: newtab
+        keywords: favicon clearbit
+      - title: Generative 1
+        description: Auto-generated unique icon
+        icon: generative
+        url: https://example1.com
+        target: newtab
+        keywords: generative icon
+      - title: Generative 2
+        description: Different domain = different icon
+        icon: generative
+        url: https://example2.com
+        target: newtab
+        keywords: generative icon unique
+      - title: Generative 3
+        description: Each domain gets unique icon
+        icon: generative
+        url: https://example3.com
+        target: newtab
+        keywords: generative icon hash
+      - title: URL Icon 1
+        description: Icon from remote URL
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/dashy.svg
+        url: https://dashy.to
+        target: newtab
+        keywords: url icon remote
+      - title: URL Icon 2
+        description: Different remote icon
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/home-assistant.svg
+        url: https://home-assistant.io
+        target: newtab
+        keywords: url icon remote
+
+  # Icon Sizes & Styling
+  - name: Icon Sizes & Styling
+    icon: fas fa-expand-arrows-alt
+    displayData:
+      rows: 1
+      cols: 4
+      itemSize: large
+      color: '#e74c3c'
+    items:
+      - title: Large Icons
+        description: Section with large icon size
+        icon: fas fa-expand
+        url: https://dashy.to/docs
+        target: newtab
+        keywords: icon size large
+      - title: Custom Color
+        description: Icon with custom color
+        icon: fas fa-palette
+        color: '#3498db'
+        url: https://dashy.to/docs
+        target: newtab
+        keywords: icon color custom
+      - title: Custom BG
+        description: Icon with background color
+        icon: fas fa-fill
+        backgroundColor: '#2ecc71'
+        color: '#ffffff'
+        url: https://dashy.to/docs
+        target: newtab
+        keywords: icon background
+      - title: No Icon
+        description: Item without an icon
+        url: https://dashy.to/docs
+        target: newtab
+        keywords: no icon text only
+

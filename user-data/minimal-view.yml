@@ -1,0 +1,170 @@
+---
+# Minimal View Page
+# Optimized for use as a browser startpage with tabbed interface
+
+pageInfo:
+  title: Minimal View
+  description: Clean and simple tabbed interface - perfect as a startpage
+  logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+
+sections:
+  # Quick Access
+  - name: Quick Access
+    icon: fas fa-bolt
+    displayData:
+      rows: 1
+      cols: 4
+    items:
+      - title: Gmail
+        description: Email
+        icon: favicon
+        url: https://mail.google.com
+        target: newtab
+        keywords: email gmail
+      - title: GitHub
+        description: Code repository
+        icon: si-github
+        url: https://github.com
+        target: newtab
+        keywords: github code
+      - title: Reddit
+        description: Social news
+        icon: favicon
+        url: https://www.reddit.com
+        target: newtab
+        keywords: reddit social
+      - title: YouTube
+        description: Video platform
+        icon: favicon
+        url: https://www.youtube.com
+        target: newtab
+        keywords: youtube video
+
+  # Development
+  - name: Development
+    icon: fas fa-code
+    displayData:
+      rows: 1
+      cols: 4
+    items:
+      - title: GitHub
+        description: Code hosting
+        icon: si-github
+        url: https://github.com
+        target: newtab
+        keywords: github dev
+      - title: Stack Overflow
+        description: Q&A platform
+        icon: si-stackoverflow
+        url: https://stackoverflow.com
+        target: newtab
+        keywords: stackoverflow qa
+      - title: MDN
+        description: Web docs
+        icon: favicon
+        url: https://developer.mozilla.org
+        target: newtab
+        keywords: mdn docs web
+      - title: Dev.to
+        description: Dev community
+        icon: si-devdotto
+        url: https://dev.to
+        target: newtab
+        keywords: dev community
+
+  # Productivity
+  - name: Productivity
+    icon: fas fa-tasks
+    displayData:
+      rows: 1
+      cols: 4
+    items:
+      - title: Google Drive
+        description: Cloud storage
+        icon: favicon
+        url: https://drive.google.com
+        target: newtab
+        keywords: drive storage
+      - title: Notion
+        description: Notes & docs
+        icon: favicon
+        url: https://www.notion.so
+        target: newtab
+        keywords: notion notes
+      - title: Trello
+        description: Task management
+        icon: si-trello
+        url: https://trello.com
+        target: newtab
+        keywords: trello tasks
+      - title: Calendar
+        description: Google Calendar
+        icon: favicon
+        url: https://calendar.google.com
+        target: newtab
+        keywords: calendar schedule
+
+  # News & Media
+  - name: News & Media
+    icon: fas fa-newspaper
+    displayData:
+      rows: 1
+      cols: 4
+    items:
+      - title: HackerNews
+        description: Tech news
+        icon: si-ycombinator
+        url: https://news.ycombinator.com
+        target: newtab
+        keywords: hackernews tech
+      - title: Reddit
+        description: Social news
+        icon: favicon
+        url: https://www.reddit.com
+        target: newtab
+        keywords: reddit news
+      - title: YouTube
+        description: Videos
+        icon: favicon
+        url: https://www.youtube.com
+        target: newtab
+        keywords: youtube media
+      - title: Spotify
+        description: Music streaming
+        icon: si-spotify
+        url: https://open.spotify.com
+        target: newtab
+        keywords: spotify music
+
+  # Tools & Utilities
+  - name: Tools
+    icon: fas fa-wrench
+    displayData:
+      rows: 1
+      cols: 4
+    items:
+      - title: ChatGPT
+        description: AI assistant
+        icon: favicon
+        url: https://chat.openai.com
+        target: newtab
+        keywords: chatgpt ai
+      - title: Cloudflare
+        description: DNS & CDN
+        icon: si-cloudflare
+        url: https://dash.cloudflare.com
+        target: newtab
+        keywords: cloudflare dns
+      - title: DigitalOcean
+        description: Cloud hosting
+        icon: si-digitalocean
+        url: https://cloud.digitalocean.com
+        target: newtab
+        keywords: digitalocean hosting
+      - title: Vercel
+        description: Deployment
+        icon: si-vercel
+        url: https://vercel.com
+        target: newtab
+        keywords: vercel deploy
+

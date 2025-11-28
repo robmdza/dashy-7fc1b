@@ -1,0 +1,244 @@
+---
+# Workspace View Page
+# Optimized for workspace view with apps that work well in iframes
+
+pageInfo:
+  title: Workspace View
+  description: Launch and manage multiple apps from within Dashy
+  logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+
+sections:
+  # Development Tools
+  - name: Development Tools
+    icon: fas fa-code
+    displayData:
+      rows: 2
+      cols: 3
+      color: '#3498db'
+    items:
+      - title: GitHub
+        description: Code repository and collaboration
+        icon: si-github
+        url: https://github.com
+        target: workspace
+        keywords: github code repo
+      - title: GitLab
+        description: DevOps platform
+        icon: si-gitlab
+        url: https://gitlab.com
+        target: workspace
+        keywords: gitlab devops
+      - title: CodePen
+        description: Frontend playground
+        icon: si-codepen
+        url: https://codepen.io
+        target: workspace
+        keywords: codepen frontend
+      - title: JSFiddle
+        description: Code playground
+        icon: favicon
+        url: https://jsfiddle.net
+        target: workspace
+        keywords: jsfiddle playground
+      - title: StackBlitz
+        description: Online IDE
+        icon: favicon
+        url: https://stackblitz.com
+        target: workspace
+        keywords: stackblitz ide
+      - title: Repl.it
+        description: Online coding environment
+        icon: favicon
+        url: https://replit.com
+        target: workspace
+        keywords: replit coding
+
+  # Documentation & Learning
+  - name: Documentation
+    icon: fas fa-book
+    displayData:
+      rows: 2
+      cols: 3
+      color: '#2ecc71'
+    items:
+      - title: MDN Web Docs
+        description: Web development docs
+        icon: favicon
+        url: https://developer.mozilla.org
+        target: workspace
+        keywords: mdn docs web
+      - title: DevDocs
+        description: API documentation
+        icon: favicon
+        url: https://devdocs.io
+        target: workspace
+        keywords: devdocs api
+      - title: Vue.js Docs
+        description: Vue.js framework
+        icon: si-vuedotjs
+        url: https://vuejs.org
+        target: workspace
+        keywords: vue docs
+      - title: React Docs
+        description: React library
+        icon: si-react
+        url: https://react.dev
+        target: workspace
+        keywords: react docs
+      - title: Node.js Docs
+        description: Node.js runtime
+        icon: si-nodedotjs
+        url: https://nodejs.org/docs
+        target: workspace
+        keywords: nodejs docs
+      - title: Python Docs
+        description: Python language
+        icon: si-python
+        url: https://docs.python.org
+        target: workspace
+        keywords: python docs
+
+  # Communication
+  - name: Communication
+    icon: fas fa-comments
+    displayData:
+      rows: 1
+      cols: 4
+      color: '#9b59b6'
+    items:
+      - title: Gmail
+        description: Email service
+        icon: favicon
+        url: https://mail.google.com
+        target: workspace
+        keywords: gmail email
+      - title: Slack
+        description: Team communication
+        icon: si-slack
+        url: https://slack.com
+        target: workspace
+        keywords: slack chat
+      - title: Discord
+        description: Voice and text chat
+        icon: si-discord
+        url: https://discord.com
+        target: workspace
+        keywords: discord chat
+      - title: Telegram
+        description: Messaging app
+        icon: si-telegram
+        url: https://web.telegram.org
+        target: workspace
+        keywords: telegram message
+
+  # Monitoring & Admin
+  - name: Monitoring
+    icon: fas fa-chart-line
+    displayData:
+      rows: 2
+      cols: 3
+      color: '#e74c3c'
+    items:
+      - title: Grafana
+        description: Analytics and monitoring
+        icon: sh-grafana
+        url: http://grafana.local
+        target: workspace
+        keywords: grafana monitoring
+        statusCheck: false
+      - title: Prometheus
+        description: Metrics database
+        icon: favicon
+        url: http://prometheus.local
+        target: workspace
+        keywords: prometheus metrics
+        statusCheck: false
+      - title: Portainer
+        description: Docker management
+        icon: hl-portainer
+        url: http://portainer.local
+        target: workspace
+        keywords: portainer docker
+        statusCheck: false
+      - title: Uptime Kuma
+        description: Uptime monitoring
+        icon: favicon
+        url: http://uptime.local
+        target: workspace
+        keywords: uptime monitoring
+        statusCheck: false
+      - title: Heimdall
+        description: Application dashboard
+        icon: favicon
+        url: http://heimdall.local
+        target: workspace
+        keywords: heimdall dashboard
+        statusCheck: false
+      - title: Home Assistant
+        description: Home automation
+        icon: hl-homeassistant
+        url: http://homeassistant.local
+        target: workspace
+        keywords: home assistant iot
+        statusCheck: false
+
+  # Cloud Services
+  - name: Cloud Services
+    icon: fas fa-cloud
+    displayData:
+      rows: 1
+      cols: 4
+      color: '#f39c12'
+    items:
+      - title: AWS Console
+        description: Amazon Web Services
+        icon: si-amazonaws
+        url: https://console.aws.amazon.com
+        target: workspace
+        keywords: aws cloud
+      - title: Google Cloud
+        description: GCP Console
+        icon: si-googlecloud
+        url: https://console.cloud.google.com
+        target: workspace
+        keywords: gcp cloud
+      - title: Azure Portal
+        description: Microsoft Azure
+        icon: si-microsoftazure
+        url: https://portal.azure.com
+        target: workspace
+        keywords: azure cloud
+      - title: DigitalOcean
+        description: Cloud platform
+        icon: si-digitalocean
+        url: https://cloud.digitalocean.com
+        target: workspace
+        keywords: digitalocean cloud
+
+  # Notes
+  - name: Notes Section
+    icon: fas fa-sticky-note
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#1abc9c'
+    items:
+      - title: Notion
+        description: All-in-one workspace
+        icon: favicon
+        url: https://www.notion.so
+        target: workspace
+        keywords: notion notes
+      - title: Obsidian
+        description: Knowledge base
+        icon: favicon
+        url: https://obsidian.md
+        target: workspace
+        keywords: obsidian notes
+      - title: Evernote
+        description: Note taking
+        icon: favicon
+        url: https://www.evernote.com
+        target: workspace
+        keywords: evernote notes
+

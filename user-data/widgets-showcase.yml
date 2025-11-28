@@ -1,0 +1,266 @@
+---
+# Widgets Showcase Page
+# Demonstrates all available widget types and features
+
+pageInfo:
+  title: Widgets Showcase
+  description: All available widgets and their configurations
+  logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+
+sections:
+  # General Widgets
+  - name: General Widgets
+    icon: fas fa-th-large
+    displayData:
+      rows: 3
+      cols: 2
+      color: '#ff6b6b'
+    widgets:
+      - type: clock
+        options:
+          timeZone: America/New_York
+          format: en-US
+          showDate: true
+          showSeconds: true
+        label: "New York Clock"
+      - type: clock
+        options:
+          timeZone: Europe/London
+          format: en-GB
+          showDate: true
+          showSeconds: false
+          use12Hour: true
+          customCityName: "London"
+        label: "London Clock (12h)"
+      - type: public-ip
+        options:
+          provider: ipapi.co
+        label: "Public IP Address"
+      - type: rss-feed
+        options:
+          rssUrl: https://github.com/Lissy93/dashy/commits/master.atom
+          limit: 5
+          orderBy: pubDate
+          orderDirection: desc
+        label: "GitHub RSS Feed"
+      - type: image
+        options:
+          imagePath: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+          imageWidth: 300
+          imageHeight: 300
+        label: "Image Widget"
+      - type: crypto-watch-list
+        options:
+          currency: USD
+          sortBy: marketCap
+          assets:
+            - bitcoin
+            - ethereum
+            - monero
+          limit: 3
+        label: "Crypto Watch List"
+
+  # System & Monitoring Widgets
+  - name: System & Monitoring
+    icon: fas fa-server
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#4ecdc4'
+    widgets:
+      - type: system-info
+        options:
+          showHost: true
+          showOS: true
+          showKernel: true
+          showUptime: true
+        label: "System Information"
+      - type: gl-current-cpu
+        options:
+          hostname: http://glances.example.com
+        label: "Glances CPU (requires Glances)"
+        ignoreErrors: true
+      - type: gl-current-mem
+        options:
+          hostname: http://glances.example.com
+        label: "Glances Memory (requires Glances)"
+        ignoreErrors: true
+
+  # Information & News Widgets
+  - name: Information Widgets
+    icon: fas fa-newspaper
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#ffe66d'
+    widgets:
+      - type: github-trending
+        options:
+          language: javascript
+          limit: 5
+        label: "GitHub Trending"
+      - type: hackernews-trending
+        options:
+          limit: 5
+        label: "HackerNews Trending"
+      - type: xkcd-comics
+        options:
+          comicType: latest
+        label: "XKCD Comics"
+      - type: joke
+        label: "Joke of the Day"
+
+  # Crypto & Finance Widgets
+  - name: Crypto & Finance
+    icon: fas fa-coins
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#a8e6cf'
+    widgets:
+      - type: crypto-price-chart
+        options:
+          asset: bitcoin
+          currency: USD
+          numDays: 7
+          chartColor: '#f7931a'
+          chartHeight: 300
+        label: "Bitcoin Price Chart"
+      - type: crypto-price-chart
+        options:
+          asset: ethereum
+          currency: USD
+          numDays: 30
+          chartColor: '#627eea'
+          chartHeight: 300
+        label: "Ethereum Price Chart"
+      - type: wallet-balance
+        options:
+          coin: btc
+          address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+          limit: 5
+        label: "Bitcoin Wallet (Example)"
+        ignoreErrors: true
+      - type: exchange-rates
+        options:
+          apiKey: REPLACE_WITH_API_KEY
+          inputCurrency: USD
+          outputCurrencies:
+            - EUR
+            - GBP
+            - JPY
+        label: "Exchange Rates"
+        ignoreErrors: true
+
+  # Utility Widgets
+  - name: Utility Widgets
+    icon: fas fa-tools
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#ffa07a'
+    widgets:
+      - type: domain-monitor
+        options:
+          domain: example.com
+          apiKey: REPLACE_WITH_API_KEY
+          showFullInfo: false
+        label: "Domain Monitor"
+        ignoreErrors: true
+      - type: public-holidays
+        options:
+          country: US
+          holidayType: public_holiday
+          monthsToShow: 12
+          lang: en
+        label: "US Public Holidays"
+      - type: mullvad-status
+        label: "Mullvad VPN Status"
+      - type: cve-vulnerabilities
+        options:
+          sortBy: publish-date
+          limit: 10
+          minScore: 5
+        label: "Security Vulnerabilities"
+
+  # Self-Hosted Service Widgets (Examples - will show errors without actual services)
+  - name: Self-Hosted Services
+    icon: fas fa-cloud
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#dda0dd'
+    widgets:
+      - type: pihole-stats
+        options:
+          hostname: http://pihole.local
+        label: "Pi-Hole Stats (Example)"
+        ignoreErrors: true
+      - type: nextcloud-user
+        options:
+          hostname: http://nextcloud.local
+          username: admin
+        label: "Nextcloud User (Example)"
+        ignoreErrors: true
+      - type: uptime-kuma
+        options:
+          hostname: http://uptime.local
+          apiKey: REPLACE_WITH_API_KEY
+        label: "Uptime Kuma (Example)"
+        ignoreErrors: true
+      - type: adguard-stats
+        options:
+          hostname: http://adguard.local
+        label: "AdGuard Stats (Example)"
+        ignoreErrors: true
+
+  # Widget with Continuous Updates
+  - name: Auto-Updating Widgets
+    icon: fas fa-sync-alt
+    displayData:
+      rows: 1
+      cols: 2
+      color: '#98d8c8'
+    widgets:
+      - type: clock
+        options:
+          timeZone: UTC
+          format: en-US
+          showDate: true
+          showSeconds: true
+        updateInterval: 1
+        label: "Clock (updates every second)"
+      - type: public-ip
+        options:
+          provider: ipapi.co
+        updateInterval: 300
+        label: "Public IP (updates every 5 min)"
+
+  # Mixed Widgets and Items
+  - name: Mixed Content Section
+    icon: fas fa-th
+    displayData:
+      rows: 2
+      cols: 2
+      color: '#f0e68c'
+    widgets:
+      - type: clock
+        options:
+          timeZone: Asia/Tokyo
+          format: ja-JP
+          showDate: true
+        label: "Tokyo Time"
+    items:
+      - title: Widget Docs
+        description: Documentation for widgets
+        icon: fas fa-book
+        url: https://dashy.to/docs/widgets
+        target: newtab
+        keywords: widgets documentation
+      - title: Widget Examples
+        description: More widget examples
+        icon: fas fa-code
+        url: https://github.com/Lissy93/dashy/tree/master/src/components/Widgets
+        target: newtab
+        keywords: widgets examples code
+

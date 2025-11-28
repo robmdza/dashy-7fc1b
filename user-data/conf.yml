@@ -1,13 +1,14 @@
 ---
 # Dashy Configuration File
 # Comprehensive dashboard configuration with all features enabled
-# Based on services from Caddyfile and inspired by showcase examples
+# Based on examples from https://gist.github.com/Lissy93/000f712a5ce98f212817d20bc16bab10
 
 # Page meta information
 pageInfo:
-  title: Atcalli Services Dashboard
-  description: Centralized access to all self-hosted services
+  title: Dashy Features Showcase
+  description: Comprehensive dashboard demonstrating all Dashy features
   logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
+  footerText: "Built with Dashy | Showcasing all features | <a href='https://dashy.to/docs'>Documentation</a>"
   navLinks:
     - title: GitHub
       path: https://github.com/Lissy93/dashy
@@ -15,9 +16,18 @@ pageInfo:
     - title: Documentation
       path: https://dashy.to/docs
       icon: fas fa-book
-    - title: Issues
-      path: https://github.com/Lissy93/dashy/issues
-      icon: fas fa-bug
+    - title: Widgets
+      path: /widgets-showcase
+      icon: fas fa-chart-bar
+    - title: Icons
+      path: /icons-showcase
+      icon: fas fa-icons
+    - title: Themes
+      path: /theming-showcase
+      icon: fas fa-palette
+    - title: Minimal
+      path: /minimal-view
+      icon: fas fa-compress
 
 # Application configuration
 appConfig:
@@ -26,269 +36,395 @@ appConfig:
   layout: auto
   iconSize: medium
   language: en
+  cssThemes: ['colorful', 'dracula', 'nord', 'oblivion', 'dark', 'light']
   
   # Starting view
   startingView: default
+  defaultOpeningMethod: newtab
+  workspaceLandingUrl: https://github.com/Lissy93/dashy
   
   # Authentication (enable and configure below)
   auth:
     enable: true
+    enableGuestAccess: false
     users:
       - user: admin
         hash: 51ED857FA00C3BF3DD53222DFF33910B577E7395A0B32EF54E3772B2B0286CB5
+        type: admin
+        # Password: best4net
         # Generate SHA-256 hash at: https://passwordsgenerator.net/sha256-hash-generator/
   
-  # Status checking
+  # Status checking - demonstrates all status check features
   statusCheck: true
   statusCheckInterval: 60
   statusCheckTimeout: 5000
   statusCheckAllowInsecure: false
   
-  # Web search
+  # Web search configuration
   webSearch:
     disableWebSearch: false
     searchEngine: google
     placeholder: Search the web...
+    openingMethod: newtab
+    searchBangs:
+      '!gh': 'https://github.com/search?q='
+      '!g': 'google'
+      '!w': 'https://en.wikipedia.org/wiki/'
   
-  # Widgets - Clock, Weather, System Info, etc.
+  # Widgets - Global widgets that appear on all pages
   widgets:
     - type: clock
       options:
-        format: 'HH:mm:ss'
-        timezone: auto
+        timeZone: America/New_York
+        format: en-US
         showDate: true
         showSeconds: true
-    - type: weather
+        use12Hour: false
+    - type: public-ip
       options:
-        location: auto
-        units: metric
-        provider: openweathermap
-        apiKey: REPLACE_WITH_OPENWEATHER_API_KEY
-    - type: system-info
+        provider: ipapi.co
+    - type: rss-feed
       options:
-        showHost: true
-        showOS: true
-        showKernel: true
-        showUptime: true
-    - type: search
-      options:
-        provider: google
-        placeholder: Search the web...
-    - type: quick-links
-      options:
-        links:
-          - title: Caddy Config
-            icon: fas fa-file-code
-            url: https://github.com/your-repo
-          - title: Server Status
-            icon: fas fa-server
-            url: https://proxmox.atcalli.link
+        rssUrl: https://github.com/Lissy93/dashy/commits/master.atom
+        limit: 5
+  
+  # Icon configuration
+  enableFontAwesome: true
+  enableMaterialDesignIcons: true
+  faviconApi: allesedv
+  defaultIcon: fas fa-cube
   
   # UI preferences
+  hideComponents:
+    hideHeading: false
+    hideNav: false
+    hideSearch: false
+    hideSettings: false
+    hideFooter: false
   hideErrors: false
   disableConfiguration: false
   disableSmartSort: false
   disableUpdateChecks: false
   enableMultiTasking: true
   enableServiceWorker: true
+  disableContextMenu: false
+  
+  # Custom colors for themes
+  customColors:
+    colorful:
+      primary: '#75efff'
+      background: '#1a1a2e'
   
   # Privacy
   preventWriteToDisk: false
   preventLocalSave: false
   preventConfigSync: false
 
-# Main content - Sections and items
+# Additional pages for multi-page support
+pages:
+  - name: Widgets Showcase
+    path: 'widgets-showcase.yml'
+  - name: Icons Showcase
+    path: 'icons-showcase.yml'
+  - name: Theming Showcase
+    path: 'theming-showcase.yml'
+  - name: Minimal View
+    path: 'minimal-view.yml'
+  - name: Workspace View
+    path: 'workspace-view.yml'
+
+# Main content - Sections and items demonstrating all features
 sections:
-  # Media & Entertainment
-  - name: Media & Entertainment
-    icon: fas fa-film
+  # Status Indicators Section - Shows different status check configurations
+  - name: Status Indicators Showcase
+    icon: fas fa-heartbeat
     displayData:
-      sortBy: name
+      sortBy: default
+      rows: 1
+      cols: 4
+      color: '#ff6b6b'
+    items:
+      - title: Always Online
+        description: Status check enabled with default settings
+        icon: fas fa-check-circle
+        url: https://www.google.com
+        statusCheck: true
+        target: newtab
+        keywords: status online check
+      - title: Custom Status URL
+        description: Status check with custom endpoint
+        icon: fas fa-link
+        url: https://www.github.com
+        statusCheck: true
+        statusCheckUrl: https://api.github.com/status
+        target: newtab
+        keywords: status custom url
+      - title: Insecure Allowed
+        description: Status check allowing insecure HTTP
+        icon: fas fa-unlock
+        url: http://example.com
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        target: newtab
+        keywords: status insecure http
+      - title: No Status Check
+        description: Status checking explicitly disabled
+        icon: fas fa-ban
+        url: https://www.wikipedia.org
+        statusCheck: false
+        target: newtab
+        keywords: status disabled
+
+  # Opening Methods Section - Demonstrates different target types
+  - name: Opening Methods
+    icon: fas fa-external-link-alt
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 5
+      color: '#4ecdc4'
+    items:
+      - title: New Tab
+        description: Opens in a new browser tab (default)
+        icon: fas fa-window-maximize
+        url: https://www.google.com
+        target: newtab
+        keywords: new tab open
+      - title: Same Tab
+        description: Opens in the current tab
+        icon: fas fa-compress
+        url: https://www.github.com
+        target: sametab
+        keywords: same tab navigate
+      - title: Modal
+        description: Opens in a popup modal overlay
+        icon: fas fa-window-restore
+        url: https://www.wikipedia.org
+        target: modal
+        keywords: modal popup overlay
+      - title: Workspace
+        description: Opens in workspace view
+        icon: fas fa-desktop
+        url: https://dashy.to
+        target: workspace
+        keywords: workspace iframe
+      - title: Clipboard
+        description: Copies URL to clipboard only
+        icon: fas fa-clipboard
+        url: https://www.reddit.com
+        target: clipboard
+        keywords: clipboard copy url
+
+  # Icon Types Section - Shows all supported icon formats
+  - name: Icon Types Showcase
+    icon: fas fa-icons
+    displayData:
+      sortBy: default
       rows: 2
       cols: 4
+      color: '#ffe66d'
     items:
-      - title: Jellyfin
-        description: Media streaming server - Movies, TV shows, and music
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/jellyfin.svg
-        url: https://jellyfin.atcalli.link
-        statusCheck: true
-        statusCheckAllowInsecure: false
-        target: sametab
-        keywords: media streaming movies tv shows music
-      
-      - title: Immich
-        description: Self-hosted photo and video backup solution
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/immich.svg
-        url: https://immich.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: photos videos backup gallery
+      - title: Font Awesome
+        description: Font Awesome icon (fas fa-rocket)
+        icon: fas fa-rocket
+        url: https://fontawesome.com
+        target: newtab
+        keywords: font awesome icon
+      - title: Simple Icon
+        description: Simple Icons (si-github)
+        icon: si-github
+        url: https://simpleicons.org
+        target: newtab
+        keywords: simple icons
+      - title: Material Icon
+        description: Material Design Icon (mdi-alien)
+        icon: mdi-alien
+        url: https://materialdesignicons.com
+        target: newtab
+        keywords: material design icon
+      - title: Home Lab Icon
+        description: Home Lab icon (hl-docker)
+        icon: hl-docker
+        url: https://github.com/walkxcode/dashboard-icons
+        target: newtab
+        keywords: homelab icon
+      - title: Selfh.st Icon
+        description: Selfh.st icon (sh-home-assistant)
+        icon: sh-home-assistant
+        url: https://selfh.st
+        target: newtab
+        keywords: selfhst icon
+      - title: Emoji Icon
+        description: Emoji icon 🚀
+        icon: 🚀
+        url: https://emojipedia.org
+        target: newtab
+        keywords: emoji icon
+      - title: Generative Icon
+        description: Auto-generated unique icon
+        icon: generative
+        url: https://dicebear.com
+        target: newtab
+        keywords: generative icon auto
+      - title: Favicon Icon
+        description: Auto-fetched favicon
+        icon: favicon
+        url: https://www.apple.com
+        target: newtab
+        keywords: favicon auto fetch
+      - title: URL Icon
+        description: Icon loaded from URL
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/dashy.svg
+        url: https://dashy.to
+        target: newtab
+        keywords: url icon remote
 
-  # Home Automation & IoT
-  - name: Home Automation
-    icon: fas fa-home
+  # Display Data Features Section
+  - name: Display Data Features
+    icon: fas fa-sliders-h
     displayData:
-      sortBy: name
+      sortBy: most-used
       rows: 2
       cols: 3
+      collapsed: false
+      itemSize: medium
+      color: '#a8e6cf'
+      sectionLayout: grid
+      itemCountX: 3
     items:
-      - title: Home Assistant
-        description: Open source home automation platform
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/home-assistant.svg
-        url: https://ha.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: home automation iot smart home
-      
-      - title: Nuki Bridge
-        description: Smart lock bridge for Nuki devices
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/nuki.svg
-        url: https://nukibridge.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: smart lock nuki bridge
+      - title: Hotkey 1
+        description: Press key 1 to launch
+        icon: fas fa-keyboard
+        url: https://www.google.com
+        hotkey: 1
+        target: newtab
+        keywords: hotkey shortcut
+      - title: Custom Color
+        description: Item with custom text color
+        icon: fas fa-palette
+        url: https://www.github.com
+        color: '#ff6b6b'
+        target: newtab
+        keywords: color custom
+      - title: Custom BG
+        description: Item with custom background
+        icon: fas fa-fill-drip
+        url: https://www.wikipedia.org
+        backgroundColor: '#4ecdc4'
+        color: '#ffffff'
+        target: newtab
+        keywords: background custom
+      - title: Tags & Keywords
+        description: Enhanced search with tags
+        icon: fas fa-tags
+        url: https://www.reddit.com
+        tags: [tag1, tag2, example]
+        keywords: tags keywords search
+        target: newtab
+      - title: Long Title Example
+        description: Testing long titles and descriptions that wrap properly
+        icon: fas fa-text-width
+        url: https://www.stackoverflow.com
+        target: newtab
+        keywords: long text wrap
+      - title: Provider Name
+        description: Shows provider below title
+        icon: fab fa-google
+        url: https://www.google.com
+        provider: Google
+        target: newtab
+        keywords: provider label
 
-  # Infrastructure & Virtualization
-  - name: Infrastructure
-    icon: fas fa-server
+  # Sections with Widgets
+  - name: Section with Widgets
+    icon: fas fa-chart-bar
     displayData:
-      sortBy: name
-      rows: 2
-      cols: 3
-    items:
-      - title: Proxmox
-        description: Virtualization management platform
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/proxmox.svg
-        url: https://proxmox.atcalli.link
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        target: sametab
-        keywords: virtualization vm containers hypervisor
-      
-      - title: TrueNAS
-        description: Network-attached storage solution
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/truenas.svg
-        url: https://truenas.atcalli.link
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        target: sametab
-        keywords: nas storage fileserver zfs
-      
-      - title: Portainer
-        description: Docker container management interface
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/portainer.svg
-        url: https://portainer.atcalli.link
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        target: sametab
-        keywords: docker containers management
-
-  # Development & Automation
-  - name: Development & Automation
-    icon: fas fa-code
-    displayData:
-      sortBy: name
-      rows: 2
-      cols: 3
-    items:
-      - title: Ollama
-        description: Local AI model runner and API
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/ollama.svg
-        url: https://ollama.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: ai llm models local ai
-      
-      - title: n8n
-        description: Workflow automation platform
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/n8n.svg
-        url: https://n8n.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: automation workflow ifttt zapier
-      
-      - title: n8n MCP
-        description: n8n Model Context Protocol server
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/n8n.svg
-        url: https://mcp-n8n.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: mcp model context protocol
-
-  # Network & Security
-  - name: Network & Security
-    icon: fas fa-shield-alt
-    displayData:
-      sortBy: name
-      rows: 2
-      cols: 3
-    items:
-      - title: WireGuard
-        description: Fast and secure VPN tunnel
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/wireguard.svg
-        url: https://wg.atcalli.link
-        statusCheck: true
-        statusCheckAllowInsecure: true
-        target: sametab
-        keywords: vpn wireguard security tunnel
-      
-      - title: AdGuard
-        description: Network-wide ad blocker and DNS filter
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/adguard.svg
-        url: https://adguard.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: adblock dns filter privacy
-
-  # Storage Solutions
-  - name: Decentralized Storage
-    icon: fas fa-cloud
-    displayData:
-      sortBy: name
       rows: 2
       cols: 2
+      color: '#ffa07a'
+    widgets:
+      - type: clock
+        options:
+          timeZone: Europe/London
+          format: en-GB
+          showDate: true
+          showSeconds: true
+      - type: public-ip
+        options:
+          provider: ipapi.co
     items:
-      - title: Storj
-        description: Decentralized cloud storage network
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/storj.svg
-        url: https://storj.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: storage decentralized cloud blockchain
-      
-      - title: Sia
-        description: Blockchain-based decentralized storage
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/sia.svg
-        url: https://sia.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: sia blockchain storage decentralized
+      - title: GitHub
+        description: Source code repository
+        icon: fab fa-github
+        url: https://github.com/Lissy93/dashy
+        target: newtab
+        keywords: github repo code
+      - title: Documentation
+        description: Full documentation
+        icon: fas fa-book
+        url: https://dashy.to/docs
+        target: newtab
+        keywords: docs documentation
 
-  # Dashboards & Monitoring
-  - name: Dashboards
-    icon: fas fa-chart-line
+  # Sub-Items Example
+  - name: Sub-Items Group
+    icon: fas fa-layer-group
     displayData:
-      sortBy: name
       rows: 1
       cols: 2
+      color: '#dda0dd'
     items:
-      - title: Heimdall
-        description: Application dashboard and homepage
-        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/heimdall.svg
-        url: https://heimdall.atcalli.link
-        statusCheck: true
-        target: sametab
-        keywords: dashboard homepage launcher
+      - title: Main Item
+        description: Primary item with sub-items below
+        icon: fas fa-folder-open
+        url: https://www.google.com
+        target: newtab
+        keywords: main item
+        subItems:
+          - title: Sub Item 1
+            description: First sub-item
+            icon: fas fa-file
+            url: https://www.github.com
+            target: newtab
+          - title: Sub Item 2
+            description: Second sub-item
+            icon: fas fa-file-alt
+            url: https://www.wikipedia.org
+            target: newtab
+          - title: Sub Item 3
+            description: Third sub-item with different icon
+            icon: mdi-file-document
+            url: https://www.stackoverflow.com
+            target: newtab
 
-# Optional: Additional pages for multi-page support
-# Uncomment and configure if you want separate pages
-# pages:
-#   - name: Home
-#     icon: fas fa-home
-#     path: /
-#   - name: Media
-#     icon: fas fa-film
-#     path: /media
-#   - name: Infrastructure
-#     icon: fas fa-server
-#     path: /infrastructure
+  # Authentication & Visibility
+  - name: Auth & Visibility
+    icon: fas fa-user-shield
+    displayData:
+      rows: 1
+      cols: 3
+      color: '#98d8c8'
+      hideForGuests: false
+    items:
+      - title: Public Item
+        description: Visible to everyone
+        icon: fas fa-globe
+        url: https://www.google.com
+        target: newtab
+        keywords: public visible
+      - title: Admin Only
+        description: Only visible to admin users
+        icon: fas fa-user-secret
+        url: https://www.github.com
+        target: newtab
+        displayData:
+          showForUsers: [admin]
+        keywords: admin only private
+      - title: Hidden from Guests
+        description: Only visible when logged in
+        icon: fas fa-lock
+        url: https://www.wikipedia.org
+        target: newtab
+        displayData:
+          hideForGuests: true
+        keywords: logged in required
