@@ -1,47 +1,294 @@
 ---
-# Page meta info, like heading, footer text and nav links
+# Dashy Configuration File
+# Comprehensive dashboard configuration with all features enabled
+# Based on services from Caddyfile and inspired by showcase examples
+
+# Page meta information
 pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
+  title: Atcalli Services Dashboard
+  description: Centralized access to all self-hosted services
+  logo: https://i.ibb.co/qWWpDnp/astro-dab-128.png
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
+    - title: GitHub
+      path: https://github.com/Lissy93/dashy
+      icon: fab fa-github
+    - title: Documentation
+      path: https://dashy.to/docs
+      icon: fas fa-book
+    - title: Issues
+      path: https://github.com/Lissy93/dashy/issues
+      icon: fas fa-bug
 
-# Optional app settings and configuration
+# Application configuration
 appConfig:
+  # Theme and appearance
   theme: colorful
-
-# Main content - An array of sections, each containing an array of items
-sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
+  layout: auto
+  iconSize: medium
+  language: en
   
+  # Starting view
+  startingView: default
+  
+  # Authentication (enable and configure below)
+  auth:
+    enable: true
+    users:
+      - user: admin
+        hash: $2y$12$REPLACE_WITH_YOUR_BCRYPT_HASH
+        # Generate hash at: https://bcrypt-generator.com/
+  
+  # Status checking
+  statusCheck: true
+  statusCheckInterval: 60
+  statusCheckTimeout: 5000
+  statusCheckAllowInsecure: false
+  
+  # Web search
+  webSearch:
+    disableWebSearch: false
+    searchEngine: google
+    placeholder: Search the web...
+  
+  # Widgets - Clock, Weather, System Info, etc.
+  widgets:
+    - type: clock
+      options:
+        format: 'HH:mm:ss'
+        timezone: auto
+        showDate: true
+        showSeconds: true
+    - type: weather
+      options:
+        location: auto
+        units: metric
+        provider: openweathermap
+        apiKey: REPLACE_WITH_OPENWEATHER_API_KEY
+    - type: system-info
+      options:
+        showHost: true
+        showOS: true
+        showKernel: true
+        showUptime: true
+    - type: search
+      options:
+        provider: google
+        placeholder: Search the web...
+    - type: quick-links
+      options:
+        links:
+          - title: Caddy Config
+            icon: fas fa-file-code
+            url: https://github.com/your-repo
+          - title: Server Status
+            icon: fas fa-server
+            url: https://proxmox.atcalli.link
+  
+  # UI preferences
+  hideErrors: false
+  disableConfiguration: false
+  disableSmartSort: false
+  disableUpdateChecks: false
+  enableMultiTasking: true
+  enableServiceWorker: true
+  
+  # Privacy
+  preventWriteToDisk: false
+  preventLocalSave: false
+  preventConfigSync: false
+
+# Main content - Sections and items
+sections:
+  # Media & Entertainment
+  - name: Media & Entertainment
+    icon: fas fa-film
+    displayData:
+      sortBy: name
+      rows: 2
+      cols: 4
+    items:
+      - title: Jellyfin
+        description: Media streaming server - Movies, TV shows, and music
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/jellyfin.svg
+        url: https://jellyfin.atcalli.link
+        statusCheck: true
+        statusCheckAllowInsecure: false
+        target: sametab
+        keywords: media streaming movies tv shows music
+      
+      - title: Immich
+        description: Self-hosted photo and video backup solution
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/immich.svg
+        url: https://immich.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: photos videos backup gallery
+
+  # Home Automation & IoT
+  - name: Home Automation
+    icon: fas fa-home
+    displayData:
+      sortBy: name
+      rows: 2
+      cols: 3
+    items:
+      - title: Home Assistant
+        description: Open source home automation platform
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/home-assistant.svg
+        url: https://ha.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: home automation iot smart home
+      
+      - title: Nuki Bridge
+        description: Smart lock bridge for Nuki devices
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/nuki.svg
+        url: https://nukibridge.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: smart lock nuki bridge
+
+  # Infrastructure & Virtualization
+  - name: Infrastructure
+    icon: fas fa-server
+    displayData:
+      sortBy: name
+      rows: 2
+      cols: 3
+    items:
+      - title: Proxmox
+        description: Virtualization management platform
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/proxmox.svg
+        url: https://proxmox.atcalli.link
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        target: sametab
+        keywords: virtualization vm containers hypervisor
+      
+      - title: TrueNAS
+        description: Network-attached storage solution
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/truenas.svg
+        url: https://truenas.atcalli.link
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        target: sametab
+        keywords: nas storage fileserver zfs
+      
+      - title: Portainer
+        description: Docker container management interface
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/portainer.svg
+        url: https://portainer.atcalli.link
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        target: sametab
+        keywords: docker containers management
+
+  # Development & Automation
+  - name: Development & Automation
+    icon: fas fa-code
+    displayData:
+      sortBy: name
+      rows: 2
+      cols: 3
+    items:
+      - title: Ollama
+        description: Local AI model runner and API
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/ollama.svg
+        url: https://ollama.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: ai llm models local ai
+      
+      - title: n8n
+        description: Workflow automation platform
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/n8n.svg
+        url: https://n8n.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: automation workflow ifttt zapier
+      
+      - title: n8n MCP
+        description: n8n Model Context Protocol server
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/n8n.svg
+        url: https://mcp-n8n.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: mcp model context protocol
+
+  # Network & Security
+  - name: Network & Security
+    icon: fas fa-shield-alt
+    displayData:
+      sortBy: name
+      rows: 2
+      cols: 3
+    items:
+      - title: WireGuard
+        description: Fast and secure VPN tunnel
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/wireguard.svg
+        url: https://wg.atcalli.link
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        target: sametab
+        keywords: vpn wireguard security tunnel
+      
+      - title: AdGuard
+        description: Network-wide ad blocker and DNS filter
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/adguard.svg
+        url: https://adguard.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: adblock dns filter privacy
+
+  # Storage Solutions
+  - name: Decentralized Storage
+    icon: fas fa-cloud
+    displayData:
+      sortBy: name
+      rows: 2
+      cols: 2
+    items:
+      - title: Storj
+        description: Decentralized cloud storage network
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/storj.svg
+        url: https://storj.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: storage decentralized cloud blockchain
+      
+      - title: Sia
+        description: Blockchain-based decentralized storage
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/sia.svg
+        url: https://sia.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: sia blockchain storage decentralized
+
+  # Dashboards & Monitoring
+  - name: Dashboards
+    icon: fas fa-chart-line
+    displayData:
+      sortBy: name
+      rows: 1
+      cols: 2
+    items:
+      - title: Heimdall
+        description: Application dashboard and homepage
+        icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/heimdall.svg
+        url: https://heimdall.atcalli.link
+        statusCheck: true
+        target: sametab
+        keywords: dashboard homepage launcher
+
+# Optional: Additional pages for multi-page support
+# Uncomment and configure if you want separate pages
+# pages:
+#   - name: Home
+#     icon: fas fa-home
+#     path: /
+#   - name: Media
+#     icon: fas fa-film
+#     path: /media
+#   - name: Infrastructure
+#     icon: fas fa-server
+#     path: /infrastructure
