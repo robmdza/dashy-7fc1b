@@ -35,8 +35,8 @@ appConfig:
     enable: true
     users:
       - user: admin
-        hash: $2y$12$REPLACE_WITH_YOUR_BCRYPT_HASH
-        # Generate hash at: https://bcrypt-generator.com/
+        hash: 51ED857FA00C3BF3DD53222DFF33910B577E7395A0B32EF54E3772B2B0286CB5
+        # Generate SHA-256 hash at: https://passwordsgenerator.net/sha256-hash-generator/
   
   # Status checking
   statusCheck: true
